@@ -6,49 +6,25 @@
     <!-- Join Page -->
     <div>
         <br />
-        <h1>회원 가입</h1>
-        <br />
-        <table>
-            <tr>
-                <td>ID</td>
-                <td><input type="text" placeholder="Please input ID" name="id"></td>
-            </tr>
-            <tr>
-                <td>비밀번호</td>
-                <td><input type="password" placeholder="Please input password" name="password"></td>
-            </tr>
-            <tr>
-                <td>닉네임</td>
-                <td><input type="text" placeholder="Please input nickname" name="nickname"></td>
-            </tr>
-        </table>
-        <br />
-        <table>
-            <tr>
-                <td><button>계정 생성</button></td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td><button>입력 초기화</button></td>
-            </tr>
-        </table>
+        <h2>회원 가입</h2>
+        <form>
+            <div>
+                <label for="id_join">ID</label>
+                <input type="text" placeholder="Please input ID" id="id_join">
+            </div>
+            <div>
+                <label for="pw_join">비밀번호</label>
+                <input type="password" placeholder="Please input ID" id="pw_join">
+            </div>
+            <div>
+                <label for="nick_join">닉네임</label>
+                <input type="text" placeholder="Please input ID" id="nick_join">
+            </div>
+            <div>
+                <button type="submit"  id="create_account">계정 생성</button>
+                <button type="create"  id="init_join_form">입력 초기화</button>
+            </div>
+        </form>
     </div>
 
     <br /><br />
@@ -56,34 +32,27 @@
     <br />
     <!-- Admin Program -->
     <div>
-        <h1>회원 관리 프로그램</h1>
+        <h2>회원 관리 프로그램</h2>
         <br />
-        <table>
-            <tr>
-                <td>ID</td>
-                <td><input type="text" placeholder="Please input ID" name="id"></td>
-            </tr>
-            <tr>
-                <td>비밀번호</td>
-                <td><input type="password" placeholder="Please input password" name="password"></td>
-            </tr>
-            <tr>
-                <td>닉네임</td>
-                <td><input type="text" placeholder="Please input nickname" name="nickname"></td>
-            </tr>
-        </table>
-        <br />
-        <table>
-            <tr>
-                <td><button>계정 검색</button></td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td><button>정보 수정</button></td>
-                <td>&#32;</td>
-                <td>&#32;</td>
-                <td><button>계정 삭제</button></td>
-            </tr>
-        </table>
+        <form>
+            <div>
+                <label for="id_manage">ID</label>
+                <input type="text" placeholder="Please input ID" id="id_manage">
+            </div>
+            <div>
+                <label for="pw_manage">비밀번호</label>
+                <input type="password" placeholder="Please input ID" id="pw_manage">
+            </div>
+            <div>
+                <label for="nick_manage">닉네임</label>
+                <input type="text" placeholder="Please input ID" id="nick_manage">
+            </div>
+            <div>
+                <button type="submit"  id="search_account">계정 검색</button>
+                <button type="submit"  id="update_account">정보 수정</button>
+                <button type="submit"  id="delete_account">계정 삭제</button>
+            </div>
+        </form>
     </div>
 </body>
 

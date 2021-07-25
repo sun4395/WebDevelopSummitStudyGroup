@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>YouTube</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+        <section>
+            <h1>회원 가입</h1>
+            <form>
+                <table>
+                    <tr>
+                        <td><label for="join_id">ID</label></td>
+                        <td><input type="text" id="join_id" name="id" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="join_password">비밀번호</label></td>
+                        <td><input type="password" id="join_password" name="password" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="join_nickname">닉네임</label></td>
+                        <td><input type="text" id="join_nickname" name="nickname" /></td>
+                    </tr>
+                </table>
+                <div class="formButtonContainer">
+                    <button type="submit">계정 생성</button>
+                    <button type="reset">입력 초기화</button>
+                </div>
+            </form>
+        </section>
+
+        <section>
+            <h1>회원 관리 프로그램</h1>
+            <form>
+                <table>
+                    <tr>
+                        <td><label for="manage_id">ID</label></td>
+                        <td><input type="text" id="manage_id" name="id" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="manage_password">비밀번호</label></td>
+                        <td><input type="password" id="manage_password" name="password" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="manage_nickname">닉네임</label></td>
+                        <td><input type="text" id="manage_nickname" name="nickname" /></td>
+                    </tr>
+                </table>
+                <div class="formButtonContainer">
+                    <button type="button">계정 검색</button>
+                    <button type="button">정보 수정</button>
+                    <button type="button">계정 삭제</button>
+                </div>
+            </form>
+        </section>
+    </body>
+</html>

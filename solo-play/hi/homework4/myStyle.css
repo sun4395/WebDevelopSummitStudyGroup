@@ -2,6 +2,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap");
 
 :root {
   --default-dark: #011627;
@@ -16,6 +17,7 @@ body {
   margin: 30px;
   background-color: var(--default-dark);
   font-family: "Noto Serif KR", serif;
+  /* font-family: "Nanum Gothic", sans-serif; */
   font-weight: 400;
   color: var(--default-dark);
 }
@@ -23,7 +25,8 @@ body {
 h2 {
   font-size: 2rem;
   font-weight: 800;
-  font-family: "Nanum Myeongjo", serif;
+  /* font-family: "Nanum Myeongjo", serif; */
+  font-family: "Nanum Gothic", sans-serif;
 }
 .main {
   padding: 5px 20px 10px 20px;
@@ -56,6 +59,7 @@ h2 {
   border: 0;
   width: 70%;
   font-family: "Noto Serif KR", serif;
+  /* font-family: "Nanum Gothic", sans-serif; */
 }
 
 .btn {
@@ -66,7 +70,8 @@ h2 {
   border-color: transparent;
   background-color: var(--moderate-green);
 
-  font-family: "Noto Serif KR", serif;
+  /* font-family: "Noto Serif KR", serif; */
+  font-family: "Nanum Gothic", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   color: var(--default-white);

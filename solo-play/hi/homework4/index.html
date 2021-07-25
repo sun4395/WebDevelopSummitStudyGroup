@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>WebDevelopSummit</title>
+    <link rel="stylesheet" href="myStyle.css"></link>
+</head>
+
+<body>
+    <!-- Join Page -->
+    <div class = "main">
+        <h2>회원 가입</h2>
+        <form class="form-class">
+            <div class="content-area">
+                <label class="input-label" for="id_join">ID</label>
+                <input class="input-class" type="text" placeholder="Please input ID" id="id_join">
+            </div>
+            <div class="content-area">
+                <label class="input-label" for="pw_join">비밀번호</label>
+                <input class="input-class" type="password" placeholder="Please input ID" id="pw_join">
+            </div>
+            <div class="content-area">
+                <label class="input-label" for="nick_join">닉네임</label>
+                <input class="input-class" type="text" placeholder="Please input ID" id="nick_join">
+            </div>
+            <div class="content-area">
+                <button class="btn" type="submit" id="create_account">계정 생성</button>
+                <button class="btn" type="reset" id="init_join_form">입력 초기화</button>
+            </div>
+        </form>
+    </div>
+
+    <hr />
+    <!-- Admin Program -->
+    <div class = "main">
+        <h2>회원 관리 프로그램</h2>
+        <br />
+        <form class="form-class">
+            <div class="content-area">
+                <label class="input-label" for="id_manage">ID</label>
+                <input class="input-class" type="text" placeholder="Please input ID" id="id_manage">
+            </div>
+            <div class="content-area">
+                <label class="input-label" for="pw_manage">비밀번호</label>
+                <input class="input-class" type="password" placeholder="Please input ID" id="pw_manage">
+            </div>
+            <div class="content-area">
+                <label class="input-label" for="nick_manage">닉네임</label>
+                <input class="input-class" type="text" placeholder="Please input ID" id="nick_manage">
+            </div>
+            <div class="content-area">
+                <button class="btn" type="submit" id="search_account">계정 검색</button>
+                <button class="btn" type="submit" id="update_account">정보 수정</button>
+                <button class="btn" type="submit" id="delete_account">계정 삭제</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

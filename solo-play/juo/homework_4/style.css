@@ -15,7 +15,7 @@ section {
     color: white;
     font-size: small;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-    background-color: RGB(252, 13, 27);
+    background-color: rgb(252, 13, 27);
     width: fit-content;
     padding: 15px;
     border-width: 0;
@@ -23,7 +23,6 @@ section {
     margin: 10px;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
 }
-
 
 input[type="text"],
 input[type="password"] {

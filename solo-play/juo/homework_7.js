@@ -52,7 +52,8 @@ function msTimerPromise() {
     .then(() => promise_msTimer(7, getRandomMS()))
     .then(() => promise_msTimer(8, getRandomMS()))
     .then(() => promise_msTimer(9, getRandomMS()))
-    .then(() => promise_msTimer(10, getRandomMS()));
+    .then(() => promise_msTimer(10, getRandomMS()))
+    .catch(reason => console.error(`Failed by some reason ${reason}`));
 }
 
 function msTimerAsyncAwait() {

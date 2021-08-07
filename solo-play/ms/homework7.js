@@ -100,6 +100,11 @@ function msTimerPromise() {
         .catch("Error");
 }
 
-function msTimerAsyncAwait() {
-    // 코드 추가
+async function msTimerAsyncAwait() {
+    try {
+        for (let i=1; i<=20; i++)
+            await promise_msTimer(i, getRandomMS());
+    } catch {
+        console.err("Error");
+    }
 }

@@ -56,8 +56,8 @@ const DOM_DATA = {
             }
         },
         buttons: {
-            "계정 생성": {
-                id: `createId`,
+            "계정 검색": {
+                id: `searchId`,
                 type: `text`
             },
             "입력 초기화": {

@@ -91,8 +91,7 @@ function pickRandomElementsFromArr(arr, n) {
     let pickArr = [];
     
     /* 코드 추가 */
-    // getRandomInt()
-    
+    pickArr = shuffleArray(arr).slice(0, n)
     return pickArr;
 }
 
@@ -106,3 +105,4 @@ function getRandomInt(min, max) {
 var demoArray = [1, 3, 5,7,9,11,13];
 shuffle = shuffleArray(demoArray);
 console.log(shuffle);
+console.log(pickRandomElementsFromArr(demoArray, 4))

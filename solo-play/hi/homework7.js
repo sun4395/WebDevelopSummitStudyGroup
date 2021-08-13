@@ -131,163 +131,141 @@ function msTimerPromise() {
     // 코드 추가
     console.log("Promise starts")
     promise_msTimer(1, getRandomMS())
-        .then(function(data) {
+        .then(function(data){
             console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-            return promise_msTimer(2, getRandomMS())
+            return promise_msTimer(data.index + 1, getRandomMS())
+        }, function(err){
+            console.log(`data: ${err.index}th function ends with error ${err.error}, after ${err.sec} ms`)
+            return promise_msTimer(err.index + 1, getRandomMS())
         })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
-            return promise_msTimer(2, getRandomMS())
-        })
-        .then(function(data) {
+        .then(function(data){
             console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-            return promise_msTimer(3, getRandomMS())
+            return promise_msTimer(data.index + 1, getRandomMS())
+        }, function(err){
+            console.log(`data: ${err.index}th function ends with error ${err.error}, after ${err.sec} ms`)
+            return promise_msTimer(err.index + 1, getRandomMS())
         })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
-            return promise_msTimer(3, getRandomMS())
-        })
-        .then(function(data) {
+        .then(function(data){
             console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-            return promise_msTimer(4, getRandomMS())
+            return promise_msTimer(data.index + 1, getRandomMS())
+        }, function(err){
+            console.log(`data: ${err.index}th function ends with error ${err.error}, after ${err.sec} ms`)
+            return promise_msTimer(err.index + 1, getRandomMS())
         })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
-            return promise_msTimer(4, getRandomMS())
-        })
-        .then(function(data) {
+        .then(function(data){
             console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-            return promise_msTimer(5, getRandomMS())
+            return promise_msTimer(data.index + 1, getRandomMS())
+        }, function(err){
+            console.log(`data: ${err.index}th function ends with error ${err.error}, after ${err.sec} ms`)
+            return promise_msTimer(err.index + 1, getRandomMS())
         })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
-            return promise_msTimer(5, getRandomMS())
-        })
-        .then(function(data) {
+        .then(function(data){
             console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-            return promise_msTimer(6, getRandomMS())
+            return promise_msTimer(data.index + 1, getRandomMS())
+        }, function(err){
+            console.log(`data: ${err.index}th function ends with error ${err.error}, after ${err.sec} ms`)
+            return promise_msTimer(err.index + 1, getRandomMS())
         })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
-            return promise_msTimer(6, getRandomMS())
-        })
-        .then(function(data) {
+        .then(function(data){
             console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-            return promise_msTimer(7, getRandomMS())
+            return promise_msTimer(data.index + 1, getRandomMS())
+        }, function(err){
+            console.log(`data: ${err.index}th function ends with error ${err.error}, after ${err.sec} ms`)
+            return promise_msTimer(err.index + 1, getRandomMS())
         })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
-            return promise_msTimer(7, getRandomMS())
-        })
-        .then(function(data) {
+        .then(function(data){
             console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-            return promise_msTimer(8, getRandomMS())
+            return promise_msTimer(data.index + 1, getRandomMS())
+        }, function(err){
+            console.log(`data: ${err.index}th function ends with error ${err.error}, after ${err.sec} ms`)
+            return promise_msTimer(err.index + 1, getRandomMS())
         })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
-            return promise_msTimer(8, getRandomMS())
-        })
-        .then(function(data) {
+        .then(function(data){
             console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-            return promise_msTimer(9, getRandomMS())
+            return promise_msTimer(data.index + 1, getRandomMS())
+        }, function(err){
+            console.log(`data: ${err.index}th function ends with error ${err.error}, after ${err.sec} ms`)
+            return promise_msTimer(err.index + 1, getRandomMS())
         })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
-            return promise_msTimer(9, getRandomMS())
-        })
-        .then(function(data) {
+        .then(function(data){
             console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-            return promise_msTimer(10, getRandomMS())
+            return promise_msTimer(data.index + 1, getRandomMS())
+        }, function(err){
+            console.log(`data: ${err.index}th function ends with error ${err.error}, after ${err.sec} ms`)
+            return promise_msTimer(err.index + 1, getRandomMS())
         })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
-            return promise_msTimer(10, getRandomMS())
-        })
-        .then(function(data) {
+        .then(function(data){
             console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-            return promise_msTimer(11, getRandomMS())
+            return promise_msTimer(data.index + 1, getRandomMS())
+        }, function(err){
+            console.log(`data: ${err.index}th function ends with error ${err.error}, after ${err.sec} ms`)
+            return promise_msTimer(err.index + 1, getRandomMS())
         })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
-            return promise_msTimer(11, getRandomMS())
-        })
-        .then(function(data) {
+        .then(function(data){
             console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-            return promise_msTimer(12, getRandomMS())
+            return promise_msTimer(data.index + 1, getRandomMS())
+        }, function(err){
+            console.log(`data: ${err.index}th function ends with error ${err.error}, after ${err.sec} ms`)
+            return promise_msTimer(err.index + 1, getRandomMS())
         })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
-            return promise_msTimer(12, getRandomMS())
-        })
-        .then(function(data) {
+        .then(function(data){
             console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-            return promise_msTimer(13, getRandomMS())
+            return promise_msTimer(data.index + 1, getRandomMS())
+        }, function(err){
+            console.log(`data: ${err.index}th function ends with error ${err.error}, after ${err.sec} ms`)
+            return promise_msTimer(err.index + 1, getRandomMS())
         })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
-            return promise_msTimer(13, getRandomMS())
-        })
-        .then(function(data) {
+        .then(function(data){
             console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-            return promise_msTimer(14, getRandomMS())
+            return promise_msTimer(data.index + 1, getRandomMS())
+        }, function(err){
+            console.log(`data: ${err.index}th function ends with error ${err.error}, after ${err.sec} ms`)
+            return promise_msTimer(err.index + 1, getRandomMS())
         })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
-            return promise_msTimer(14, getRandomMS())
-        })
-        .then(function(data) {
+        .then(function(data){
             console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-            return promise_msTimer(15, getRandomMS())
+            return promise_msTimer(data.index + 1, getRandomMS())
+        }, function(err){
+            console.log(`data: ${err.index}th function ends with error ${err.error}, after ${err.sec} ms`)
+            return promise_msTimer(err.index + 1, getRandomMS())
         })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
-            return promise_msTimer(15, getRandomMS())
-        })
-        .then(function(data) {
+        .then(function(data){
             console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-            return promise_msTimer(16, getRandomMS())
+            return promise_msTimer(data.index + 1, getRandomMS())
+        }, function(err){
+            console.log(`data: ${err.index}th function ends with error ${err.error}, after ${err.sec} ms`)
+            return promise_msTimer(err.index + 1, getRandomMS())
         })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
-            return promise_msTimer(16, getRandomMS())
-        })
-        .then(function(data) {
+        .then(function(data){
             console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-            return promise_msTimer(17, getRandomMS())
+            return promise_msTimer(data.index + 1, getRandomMS())
+        }, function(err){
+            console.log(`data: ${err.index}th function ends with error ${err.error}, after ${err.sec} ms`)
+            return promise_msTimer(err.index + 1, getRandomMS())
         })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
-            return promise_msTimer(17, getRandomMS())
-        })
-        .then(function(data) {
+        .then(function(data){
             console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-            return promise_msTimer(18, getRandomMS())
+            return promise_msTimer(data.index + 1, getRandomMS())
+        }, function(err){
+            console.log(`data: ${err.index}th function ends with error ${err.error}, after ${err.sec} ms`)
+            return promise_msTimer(err.index + 1, getRandomMS())
         })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
-            return promise_msTimer(18, getRandomMS())
-        })
-        .then(function(data) {
+        .then(function(data){
             console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-            return promise_msTimer(19, getRandomMS())
+            return promise_msTimer(data.index + 1, getRandomMS())
+        }, function(err){
+            console.log(`data: ${err.index}th function ends with error ${err.error}, after ${err.sec} ms`)
+            return promise_msTimer(err.index + 1, getRandomMS())
         })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
-            return promise_msTimer(19, getRandomMS())
-        })
-        .then(function(data) {
+        .then(function(data){
             console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-            return promise_msTimer(20, getRandomMS())
+            return promise_msTimer(data.index + 1, getRandomMS())
+        }, function(err){
+            console.log(`data: ${err.index}th function ends with error ${err.error}, after ${err.sec} ms`)
+            return promise_msTimer(err.index + 1, getRandomMS())
         })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
-            return promise_msTimer(20, getRandomMS())
-        })
-        .then(function(data) {
-            console.log(`data: ${data.index}th function ends after ${data.sec} ms`)
-        })
-        .catch(function(data) {
-            console.log(`data: ${data.index}th function ends with error ${data.error}, after ${data.sec} ms`)
+        .catch(function(err){
+            console.log(`Error occured : ${err}`)
         })
 }
 

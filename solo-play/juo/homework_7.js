@@ -56,6 +56,19 @@ function msTimerPromise() {
     .catch(reason => console.error(`Failed by some reason ${reason}`));
 }
 
-function msTimerAsyncAwait() {
-    // 안배워서 스킵
+async function msTimerAsyncAwait() {
+    try {
+        await promise_msTimer(1, getRandomMS());
+        await promise_msTimer(2, getRandomMS());
+        await promise_msTimer(3, getRandomMS());
+        await promise_msTimer(4, getRandomMS());
+        await promise_msTimer(5, getRandomMS());
+        await promise_msTimer(6, getRandomMS());
+        await promise_msTimer(7, getRandomMS());
+        await promise_msTimer(8, getRandomMS());
+        await promise_msTimer(9, getRandomMS());
+        await promise_msTimer(10, getRandomMS());
+    } catch (e) {
+        console.error(`Failed by some reason ${e}`);
+    }
 }

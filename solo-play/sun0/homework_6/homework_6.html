@@ -1,0 +1,65 @@
+<html>
+    <head>
+    <title>homework_6</title>
+	<link rel="stylesheet" href="style.css">
+    <script src="member.js"></script>
+    </head>
+    <body>
+        <section>
+		<join>
+            <h2>회원 가입</h2>
+            <table>
+                <tr>
+                    <td>ID</td>
+                    <td>
+                        <input type="text" name="id" id="id_join" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td>
+                        <input type="password" name="pwd" id="pwd_join" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>닉네임</td>
+                    <td>
+                        <input type="text" name="name" id="name_join" required>
+                    </td>
+                </tr>
+            </table>
+			<br> <!-- enter -->
+            <button id="button_create">계정 생성</button>&nbsp;&nbsp;&nbsp;
+            <button id="button_reset">입력 초기화</button>
+		</join>
+   
+		<manage>
+            <h2>회원 관리 프로그램</h2>
+                <table>
+                    <tr>
+                        <td>ID</td>
+                        <td>
+                            <input type="text" name="id" id="id_manage" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호</td>
+                        <td>
+                            <input type="password" name="pwd" id="pwd_manage" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>닉네임</td>
+                        <td>
+                            <input type="text" name="name" id="name_manage" required>
+                        </td>
+                    </tr>
+                </table>
+                <br> <!-- enter -->
+                <button id="button_member_search">계정 검색</button>&nbsp;&nbsp;&nbsp;
+                <button id="button_member_edit">정보 수정</button>&nbsp;&nbsp;&nbsp;
+                <button id="button_member_delete">계정 삭제</button>
+			</manage>
+        </section>
+    </body>
+</html>

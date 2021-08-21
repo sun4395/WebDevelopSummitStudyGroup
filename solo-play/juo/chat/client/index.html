@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="./favicon.png" sizes="216x216">
+        <title>코코아톡</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+        <script defer src="member.js"></script>
+        <script defer src="script.js"></script>
+
+        <div id="container">
+            <div id="chatTitle">
+                <h1>코코아톡</h1>
+            </div>
+
+            <div id="chatLog">
+                <div class="chatLogItem">
+                    <img class="chatProfilePicture" src="./favicon.png" />
+                    <div class="chatTextGroup">
+                        <span class="chatName">초미륵</span><br />
+                        <span class="chatText">빨리와 너만 안왔어</span><br />
+                    </div>
+                </div>
+                <div class="chatLogItem">
+                    <img class="chatProfilePicture" src="./favicon.png" />
+                    <div class="chatTextGroup">
+                        <span class="chatName">금부장</span><br />
+                        <span class="chatText">엥 나만왔어</span><br />
+                        <span class="chatText">구라까지마</span><br />
+                    </div>
+                </div>
+                <div class="chatLogItemSelf">
+                    <div class="chatTextGroup">
+                        <span class="chatText">몇채널이냐</span><br />
+                        <span class="chatText">지각비 100만원이다</span><br />
+                    </div>
+                </div>
+            </div>
+
+            <div id="chatInput">
+                <textarea id="chatInputText"></textarea>
+                <button id="chatSendButton" type="button">전송</button>
+            </div>
+
+            <div id="sidebar">
+                <h1>대화상대</h1>
+                <div id="participant">
+                    <div class="participantItem">
+                        <img class="participantProfilePicture" src="./favicon.png" />
+                        <span class="participantName">juo</span>
+                    </div>
+                    <div class="participantItem">
+                        <img class="participantProfilePicture" src="./favicon.png" />
+                        <span class="participantName">금부장</span>
+                    </div>
+                    <div class="participantItem">
+                        <img class="participantProfilePicture" src="./favicon.png" />
+                        <span class="participantName">초미륵</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

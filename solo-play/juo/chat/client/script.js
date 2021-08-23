@@ -121,21 +121,37 @@ class ChatLogItem {
 }
 
 class ParticipantList {
-    constructor(element) {
+    constructor(context, element) {
+        this.context = context;
         this.element = element;
+        this.participantItems = new Map();
     }
 
-    add(profile) {
-        // TODO: implement
+    add(id, profile) {
+        this.participantItems.set(
+            id,
+            new ParticipantItem(this.context, profile));
+        this.refresh();
     }
 
-    remove(name) {
-        // TODO: implement
+    remove(id) {
+        const removed = this.participantItems.delete(id);
+        if (!removed) return;
+        this.refresh();
+    }
+
+    refresh() {
+        this.element.textContent = "";
+
+        [...this.participantItems.values()]
+            .sort((item1, item2) => item1.profile.name > item2.profile.name)
+            .forEach(item => this.element.appendChild(item.element));
     }
 }
 
 class ParticipantItem {
-    constructor(profile) {
+    constructor(context, profile) {
+        this.context = context;
         this.profile = profile;
         this.element = this.createItemElement(profile);
     }
@@ -149,8 +165,10 @@ class ParticipantItem {
         profilePictureElement.src = profile.picture;
         element.appendChild(profilePictureElement);
 
+        const isSelfProfile = profile === this.context.myProfile;
+
         const nameElement = document.createElement("span");
-        nameElement.className = "participantName";
+        nameElement.className = isSelfProfile ? "participantNameSelf" : "participantName";
         nameElement.innerText = profile.name;
         element.appendChild(nameElement);
 
@@ -192,7 +210,7 @@ class Profile {
             canvas.width / 2,
             canvas.height / 2);
         context.rotate(getRandomNumber(-0.2, 0.2));
-        context.font = "350px Arial";
+        context.font = "320px Arial";
         context.textAlign = "center";
         context.textBaseline = "middle";
         context.fillStyle = "white";
@@ -217,13 +235,16 @@ class Chat {
 
         this.participantList = new ParticipantList(
             this,
-            document.getElementById("participant"),
+            document.getElementById("participantList"),
         );
     }
 
     start() {
         // TODO: Something wonderful
         this.myProfile = new Profile("juo");
+        this.participantList.add("juo", this.myProfile);
+        this.participantList.add("초미륵", new Profile("초미륵"));
+        this.participantList.add("금부장", new Profile("금부장"));
     }
 }
 

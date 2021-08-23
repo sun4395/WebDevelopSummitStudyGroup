@@ -1,0 +1,179 @@
+html {
+    font-size: medium;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    color: rgb(24, 24, 24);
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+#container {
+    background-color: rgb(226, 226, 226);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 17rem;
+    grid-template-rows: 2.5rem 1fr 7rem;
+    row-gap: 1px;
+    column-gap: 1px;
+}
+
+#chatTitle {
+    background-color: rgb(247, 247, 247);
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    z-index: 1;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#chatTitle h1 {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+#chatLog {
+    background-color: rgb(186, 201, 214);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.chatLogItem {
+    margin: 0.6rem;
+    display: grid;
+    grid-template-columns: 2.5rem minmax(10rem, 30rem);
+    grid-template-rows: 1fr;
+    column-gap: 0.6rem;
+}
+
+.chatLogItemSelf {
+    text-align: end;
+    margin: 0.6rem;
+}
+
+.chatProfilePicture {
+    width: 2.5rem;
+    height: 2.5rem;
+    mask-image: url(profile_picture_mask.svg);
+    mask-size: contain;
+    -webkit-mask-image: url(profile_picture_mask.svg);
+    -webkit-mask-size: contain;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.chatTextGroup {
+    width: fit-content;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: inline-block;
+}
+
+.chatName {
+    width: fit-content;
+    font-size: 0.8rem;
+    color: rgb(74, 82, 89);
+    margin-top: 0.2rem;
+}
+
+.chatText {
+    width: fit-content;
+    background-color: white;
+    border-width: 0;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    margin-top: 0.4rem;
+    display: inline-block;
+}
+
+.chatLogItemSelf .chatText {
+    background-color: rgb(248, 229, 52);
+}
+
+#chatInput {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+}
+
+#chatInputText {
+    font-size: 1rem;
+    word-break: break-all;
+    resize: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0.7rem 1rem;
+    flex-grow: 1;
+}
+
+#chatSendButton {
+    color: black;
+    font-size: 1rem;
+    background-color: rgb(249, 230, 52);
+    width: 6rem;
+    margin: 0.7rem 0.7rem 0.7rem 0;
+    border: 1px solid rgb(234, 216, 49);
+    border-radius: 0.3rem;
+}
+
+#chatSendButton:active {
+    background-color: rgb(221, 205, 46);
+}
+
+#sidebar {
+    font-size: 1rem;
+    background-color: white;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 3;
+}
+
+#sidebar h1 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0.7rem;
+}
+
+.participantItem {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    margin: 0.7rem;
+}
+
+.participantProfilePicture {
+    width: 2.8rem;
+    height: 2.8rem;
+    mask-image: url(profile_picture_mask.svg);
+    mask-size: contain;
+    -webkit-mask-image: url(profile_picture_mask.svg);
+    -webkit-mask-size: contain;
+    margin-right: 0.5rem;
+}
+
+.participantName {
+    font-size: 0.9rem;
+}
+
+.participantNameSelf {
+    font-size: 0.9rem;
+    font-weight: 600;
+}

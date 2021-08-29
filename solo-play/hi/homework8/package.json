@@ -1,0 +1,12 @@
+{
+  "name": "hi_enroll_app",
+  "version": "1.0.0",
+  "description": "Hyein First Node.js App",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

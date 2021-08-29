@@ -56,6 +56,7 @@ class Users {
   addOtherUsers() {
     this.addUser(new User(`Slackbot`, `../resources/slackbot.png`));
     this.addUser(new User(`이혜인`, `../resources/혜인.png`));
+    this.addUser(new User(`이선영`, `../resources/선영.png`));
     this.addUser(new User(`Junyoung Park`, `../resources/준영.png`));
     this.addUser(new User(`juo`, `../resources/주호.png`));
   }

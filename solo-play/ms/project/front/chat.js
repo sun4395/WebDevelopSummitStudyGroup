@@ -1,23 +1,3 @@
-class Database {
-  constructor(data) {
-    if (Database.exists) {
-      return Database.instance;
-    }
-    this._data = data;
-    Database.instance = this;
-    Database.exists = true;
-    return this;
-  }
-
-  getData() {
-    return this._data;
-  }
-
-  setData(data) {
-    this._data = data;
-  }
-}
-
 class Users {
   constructor() {
     if (Users.exist) return Users.instance;
@@ -37,7 +17,7 @@ class Users {
   addMyUser() {
     this.addUser(
       (() => {
-        let myUser = new User(`신명선`, `../resources/명선.png`);
+        let myUser = new User(`신명선`, `./resources/명선.png`);
         myUser.setMyUser(true);
         return myUser;
       })()
@@ -54,11 +34,11 @@ class Users {
   }
 
   addOtherUsers() {
-    this.addUser(new User(`Slackbot`, `../resources/slackbot.png`));
-    this.addUser(new User(`이혜인`, `../resources/혜인.png`));
-    this.addUser(new User(`이선영`, `../resources/선영.png`));
-    this.addUser(new User(`Junyoung Park`, `../resources/준영.png`));
-    this.addUser(new User(`juo`, `../resources/주호.png`));
+    this.addUser(new User(`Slackbot`, `./resources/slackbot.png`));
+    this.addUser(new User(`이혜인`, `./resources/혜인.png`));
+    this.addUser(new User(`이선영`, `./resources/선영.png`));
+    this.addUser(new User(`Junyoung Park`, `./resources/준영.png`));
+    this.addUser(new User(`juo`, `./resources/주호.png`));
   }
 }
 

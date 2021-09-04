@@ -29,7 +29,23 @@ function start(port) {
         response.writeHead(200, { 'Content-Type': mimeType['.html'] });
         fs.createReadStream(`./front/index.html`).pipe(response);
         break;
+        // 실행되지 않는 무의미한 코드는 삭제 필요합니다.
         fs.create;
+      // 이 아래의 모든 case문부터는 모두 default: 로 처리 가능합니다.
+      /*
+      default:
+        // 요청받은 URL 에 대응되는 파일의 경로 리턴하는 함수 (구현 필요)
+        const filePath = getFilePath(url); 
+        if (false === fs.existsSync()) {
+          // 클라이언트가 요청한 파일이 없을 때 처리 로직 추가
+        }
+        else {
+          // 주소의 확장자를 얻음
+          const extension = path.extname(url);
+          response.writeHead(200, { 'Content-Type': mimeType[extension] });
+          fs.createReadStream(filePath).pipe(response);
+        }
+       */
       case `/style.css`:
         response.writeHead(200, { 'Content-Type': mimeType['.css'] });
         fs.createReadStream(`./front/style.css`).pipe(response);

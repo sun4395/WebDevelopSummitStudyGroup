@@ -1,11 +1,35 @@
+// 초기화 로직은 이렇게 글로벌에 두지 말고 window.onload 안에 넣습니다.
+/*
+let UserList = null;
+
+window.onload = function() { 
+    // ...
+    UserList = [new Member(`test`,`1234!qwer`,`테스트다`)]; 
+    // ...
+}
+*/
+
+// 공통사항 : 파라메터 유효성 여부는 필수로 합니다. (특히 객체 내 프로퍼티들을 접근할 때)
+
 let UserList= [new Member(`test`,`1234!qwer`,`테스트다`)]
 
 window.onload = function() {
     document.getElementById(`create_account`).onclick = function() {
+        // 모든 줄 끝에 ; 를 붙이는 버릇을 들입니다.
+        // 변수는 반드시 적절한 스코프에서 let 또는 const 로 정의합니다.
         forms = getJoinForms()
         initInputErrorforForm(forms)
         
         try {
+            // 여러 파라메터가 있는 경우에는 객체 하나로 묶어서 넣도록 구현하는게 가독성/확장성에서 유리합니다.
+            // (Member 객체 생성 및 아래 setGuideText 등 다른 함수들에도 공통 적용)
+            /*
+            let person = new Member({
+                id : forms.id.value,
+                pw : forms.pw.value,
+                nickname: form.nick.value
+            });
+             */
             let person = new Member(forms.id.value, forms.pw.value, forms.nick.value)
             UserList.push(person)
             alert(`${person.getId()} 계정이 생성되었습니다`)
@@ -19,6 +43,7 @@ window.onload = function() {
         let forms = getManageForms()
         initInputErrorforForm(forms)
         let inputId = forms.id.value
+        // 문자열이 어떤 건 `` 을 쓰고 어떤 건 "" 을 씁니다. 문제가 없다면 하나로 통일하세요.
         if(inputId === "") {
             setGuideText(forms.id, `검색할 아이디를 입력해주세요`, true)
             return;
@@ -63,6 +88,8 @@ window.onload = function() {
             return;
         }
 
+        // 아래는 한 줄의 if문으로 처리 가능합니다.
+        // if ( true === confirm(`${forms.id.value}를 정말 삭제하시겠습니까?`) ) { ... }
         let check = confirm(`${forms.id.value}를 정말 삭제하시겠습니까?`)
         if(check){
             UserList.splice(user.idx, 1)
@@ -82,6 +109,17 @@ window.onload = function() {
         }
         return {idx: -1, user: null}
     }
+
+
+    // 아래와 같은 함수는 하나의 함수로 가능합니다. (향후 Join, Manage 외에 다른 값 필요 시에도 추가 함수구현 없이 활용 가능)
+    // 이렇게 거의 동일한 기능을 가진 함수들은 여러 개로 나누지 않는 게 더 유리할 수 있습니다.
+    /*
+    function getForms(type) {
+        return {id: document.getElementById(`id_${type}`),
+                pw:  document.getElementById(`pw_${type}`), 
+                nick : document.getElementById(`nick_${type}`)};
+    }
+     */
 
     function getJoinForms(){
         return {id: document.getElementById(`id_join`),

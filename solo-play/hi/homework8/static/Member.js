@@ -1,5 +1,6 @@
 class Member {
     constructor(id, pw, nick){
+        // 클래스로부터 생성되는 인스턴스마다 모두 독립적으로 갖고 있을 필요가 있는 함수가 아니라면 static 을 활용해봅니다.
         let errors = this.checkValidation(id, pw, nick)
         if(errors) {
             console.log(errors)

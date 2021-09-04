@@ -6,6 +6,8 @@ class Member {
   }
 }
 
+// 글로벌 변수여도 선언 시 반드시 앞에 let 또는 const 를 붙입니다.
+// 코드 상으로는 글로벌 변수가 아니라 아래 클래스 중 하나에 넣어도 될 것 같습니다.
 memberList = [];
 window.onload = function () {
   document
@@ -25,6 +27,7 @@ window.onload = function () {
     .addEventListener('click', ManageMember.removeMember);
 };
 
+// CreateMember와 ManageMember 는 역할 상 하나의 클래스로 합쳐저도 될 것으로 추측됩니다.
 class CreateMember {
   static resetCreateMemberFormInput() {
     document.getElementById('new_id').value = '';
@@ -46,6 +49,7 @@ class ManageMember {
   static searchMember() {
     let id = document.getElementById('find_id').value;
     for (let member of memberList) {
+      // Equal 비교 연산자는 반드시 === 3개를 쓰세요. (타입까지 모두 체크)
       if (id == member.id) {
         document.getElementById('find_id').value = member.id;
         document.getElementById('find_password').value = member.password;

@@ -16,8 +16,8 @@ class Users {
 
   addMyUser() {
     this.addUser(
-      (() => {
-        let myUser = new User(`신명선`, `./resources/명선.png`);
+      (function () {
+        let myUser = new User(`신명선`, `./resources/ms.png`);
         myUser.setMyUser(true);
         return myUser;
       })()
@@ -35,10 +35,10 @@ class Users {
 
   addOtherUsers() {
     this.addUser(new User(`Slackbot`, `./resources/slackbot.png`));
-    this.addUser(new User(`이혜인`, `./resources/혜인.png`));
-    this.addUser(new User(`이선영`, `./resources/선영.png`));
-    this.addUser(new User(`Junyoung Park`, `./resources/준영.png`));
-    this.addUser(new User(`juo`, `./resources/주호.png`));
+    this.addUser(new User(`이혜인`, `./resources/hi.png`));
+    this.addUser(new User(`이선영`, `./resources/sy.png`));
+    this.addUser(new User(`Junyoung Park`, `./resources/jy.png`));
+    this.addUser(new User(`juo`, `./resources/juo.png`));
   }
 }
 

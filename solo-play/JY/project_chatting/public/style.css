@@ -1,0 +1,58 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 40px;
+    background-color: #222222;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+}
+
+div#ChatContainer {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    width: calc(100vw - 200px);
+    height: calc(100vh - 40px);
+    background-color: #EEEEEE;
+}
+
+div#ChatInputContainer {
+    position: absolute;
+    left: 0;
+    top: calc(100vh - 40px);
+    width: calc(100vw - 200px);
+    height: 40px;
+}
+
+div#ChatInputContainer > input#ChatInput {
+    width: calc(100% - 60px);
+    height: 100%;
+    padding: 10px;
+}
+
+div#ChatInputContainer > button#ChatInputSend {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 60px;
+    height: 100%;
+}
+
+div#JoinMemberContainer {
+    position: absolute;
+    left: calc(100vw - 200px);
+    top: 40px;
+    width: 200px;
+    height: calc(100vh - 40px);
+    background-color: #CCCCCC;
+}

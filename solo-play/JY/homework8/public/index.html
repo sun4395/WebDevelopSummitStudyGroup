@@ -1,0 +1,109 @@
+<html>
+
+<head>
+    <title>Homework 6</title>
+    <script src='./Member.js'></script>
+    <script src='./script.js'></script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <div>
+                    회원 가입
+                </div>
+                <table>
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+                        <td>
+                            <input type="text" class="registerInput" id="registerInput_id">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            비밀번호
+                        </th>
+                        <td>
+                            <input type="password" class="registerInput" id="registerInput_pw">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            닉네임
+                        </th>
+                        <td>
+                            <input type="text" class="registerInput" id="registerInput_nick">
+                        </td>
+                    </tr>
+                </table>
+                <div class="buttonArea" id="registerBtns">
+                    <table>
+                        <tr>
+                            <td>
+                                <button class="registerBtn" id="createId">계정 생성</button>
+                            </td>
+                            <td></td>
+                            <td>
+                                <button class="registerBtn" id="resetAll">입력 초기화</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td>
+                <div>
+                    회원 관리 프로그램
+                </div>
+                <table>
+                    <table>
+                        <tr>
+                            <th>
+                                ID
+                            </th>
+                            <td>
+                                <input type="text" class="manageInput" id="manageInput_id">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                비밀번호
+                            </th>
+                            <td>
+                                <input type="password" class="manageInput" id="manageInput_pw">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                닉네임
+                            </th>
+                            <td>
+                                <input type="text" class="manageInput" id="manageInput_nick">
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="buttonArea" id="manageBtns">
+                        <table>
+                            <tr>
+                                <td>
+                                    <button class="manageBtn" id="searchId">계정 검색</button>
+                                </td>
+                                <td>
+                                    <button class="manageBtn" id="resetAll">입력 초기화</button>
+                                </td>
+                                <td>
+                                    <button class="manageBtn" id="deleteId">계정 삭제</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

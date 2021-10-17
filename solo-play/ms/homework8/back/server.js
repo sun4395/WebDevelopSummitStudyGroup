@@ -1,22 +1,23 @@
 const http = require(`http`);
 const fs = require(`fs`);
+const path = require(`path`);
 
 const hostname = `127.0.0.1`;
 
 const mimeType = {
-  '.ico': 'image/x-icon',
-  '.html': 'text/html',
-  '.js': 'text/javascript',
-  '.css': 'text/css',
-  '.png': 'image/png',
-  '.jpg': 'image/jpeg',
-  '.eot': 'aplication/vnd.ms-fontobject',
-  '.ttf': 'aplication/font-sfnt',
+  ".ico": "image/x-icon",
+  ".html": "text/html",
+  ".js": "text/javascript",
+  ".css": "text/css",
+  ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".eot": "aplication/vnd.ms-fontobject",
+  ".ttf": "aplication/font-sfnt",
 };
 
 function start(port) {
   function onError(response) {
-    response.writeHead(404, { 'Content-Type': 'text/plain' });
+    response.writeHead(404, { "Content-Type": "text/plain" });
     response.write(`Error 404: Resource not found`);
     response.end();
   }
@@ -26,47 +27,35 @@ function start(port) {
 
     switch (url) {
       case `/`:
-        response.writeHead(200, { 'Content-Type': mimeType['.html'] });
+        response.writeHead(200, { "Content-Type": mimeType[".html"] });
         fs.createReadStream(`./front/index.html`).pipe(response);
         break;
-        // 실행되지 않는 무의미한 코드는 삭제 필요합니다.
-        fs.create;
-      // 이 아래의 모든 case문부터는 모두 default: 로 처리 가능합니다.
-      /*
+      case `/favicon.ico`:
+        response.writeHead(200, { "Content-Type": mimeType[".ico"] });
+        fs.createReadStream(`./favicon.ico`).pipe(response);
+        break;
       default:
-        // 요청받은 URL 에 대응되는 파일의 경로 리턴하는 함수 (구현 필요)
-        const filePath = getFilePath(url); 
-        if (false === fs.existsSync()) {
-          // 클라이언트가 요청한 파일이 없을 때 처리 로직 추가
-        }
-        else {
+        // 요청받은 URL 에 대응되는 파일의 경로 리턴하는 함수
+        const filePath = getFilePath(url);
+        if (false === fs.existsSync(filePath)) {
+          onError(response);
+        } else {
           // 주소의 확장자를 얻음
           const extension = path.extname(url);
-          response.writeHead(200, { 'Content-Type': mimeType[extension] });
+          response.writeHead(200, { "Content-Type": mimeType[extension] });
           fs.createReadStream(filePath).pipe(response);
         }
-       */
-      case `/style.css`:
-        response.writeHead(200, { 'Content-Type': mimeType['.css'] });
-        fs.createReadStream(`./front/style.css`).pipe(response);
-        break;
-      case `/member.js`:
-        response.writeHead(200, { 'Content-Type': mimeType['.js'] });
-        fs.createReadStream(`./front/member.js`).pipe(response);
-        break;
-      case `/fonts/NanumBarunpenR.ttf`:
-        response.writeHead(200, { 'Content-Type': mimeType['.ttf'] });
-        fs.createReadStream(`./fonts/NanumBarunpenR.ttf`).pipe(response);
-        break;
-      default:
-        onError(response);
     }
   }
   const server = http.createServer(onRequest).listen(port, hostname);
 
-  server.on('clientError', (err, socket) => {
-    socket.end('HTTP/1.1 400 Bad Request\r\n\r\n');
+  server.on("clientError", (err, socket) => {
+    socket.end("HTTP/1.1 400 Bad Request\r\n\r\n");
   });
+}
+
+function getFilePath(url) {
+  return "./front" + url;
 }
 
 exports.start = start;

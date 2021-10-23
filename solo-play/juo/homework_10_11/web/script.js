@@ -1,32 +1,8 @@
 const client = new MemberClient("http://localhost:12344/member");
 
-class MemberFormInput {
-    constructor(idElement, passwordElement, nicknameElement) {
-        this.idElement = idElement;
-        this.passwordElement = passwordElement;
-        this.nicknameElement = nicknameElement;
-    }
-
-    get() {
-        return {
-            id: this.idElement.value,
-            password: this.passwordElement.value,
-            nickname: this.nicknameElement.value,
-        }
-    }
-
-    set(id, password, nickname) {
-        this.idElement.value = id;
-        this.passwordElement.value = password;
-        this.nicknameElement.value = nickname;
-    }
-
-    empty() {
-        this.set("", "", "");
-    }
-}
-
 function createMember(e) {
+    e.preventDefault();
+
     function codeToMessage(code) {
         switch (code) {
             case Result.INVALID_INPUT: return "다 채워...";
@@ -35,9 +11,15 @@ function createMember(e) {
         }
     }
 
+    input = joinInput.get();
+    if (!(input.id && input.password && input.nickname)) {
+        alert(codeToMessage(Result.INVALID_INPUT));
+        return;
+    }
+
     client.request({
         method: "POST",
-        data: joinInput.get(),
+        data: input,
      }, (status, responseBody) => {
         console.log(status, responseBody);
 
@@ -47,11 +29,11 @@ function createMember(e) {
             alert(codeToMessage(responseBody?.code));
         }
     });
-
-    e.preventDefault();
 }
 
 function searchMember(e) {
+    e.preventDefault();
+
     function codeToMessage(code) {
         switch (code) {
             case Result.INVALID_INPUT: return "아이디 채워...";
@@ -60,9 +42,15 @@ function searchMember(e) {
         }
     }
 
+    input = manageInput.get();
+    if (!input.id) {
+        alert(codeToMessage(Result.INVALID_INPUT));
+        return;
+    }
+
     client.request({
         method: "GET",
-        resource: manageInput.get().id,
+        resource: input.id,
      }, (status, responseBody) => {
         console.log(status, responseBody);
 
@@ -75,11 +63,11 @@ function searchMember(e) {
             alert(codeToMessage(responseBody?.code));
         }
     });
-
-    e.preventDefault();
 }
 
 function modifyMember(e) {
+    e.preventDefault();
+
     function codeToMessage(code) {
         switch (code) {
             case Result.INVALID_INPUT: return "다 채워...";
@@ -88,10 +76,16 @@ function modifyMember(e) {
         }
     }
 
+    input = manageInput.get();
+    if (!(input.id && input.password && input.nickname)) {
+        alert(codeToMessage(Result.INVALID_INPUT));
+        return;
+    }
+
     client.request({
         method: "PUT",
-        resource: manageInput.get().id,
-        data: manageInput.get(),
+        resource: input.id,
+        data: input,
      }, (status, responseBody) => {
         console.log(status, responseBody);
 
@@ -101,11 +95,11 @@ function modifyMember(e) {
             alert(codeToMessage(responseBody?.code));
         }
     });
-
-    e.preventDefault();
 }
 
 function deleteMember(e) {
+    e.preventDefault();
+
     function codeToMessage(code) {
         switch (code) {
             case Result.INVALID_INPUT: return "아이디 채워...";
@@ -114,9 +108,15 @@ function deleteMember(e) {
         }
     }
 
+    input = manageInput.get();
+    if (!input.id) {
+        alert(codeToMessage(Result.INVALID_INPUT));
+        return;
+    }
+
     client.request({
         method: "DELETE",
-        resource: manageInput.get().id,
+        resource: input.id,
      }, (status, responseBody) => {
         console.log(status, responseBody);
 
@@ -127,8 +127,6 @@ function deleteMember(e) {
             alert(codeToMessage(responseBody?.code));
         }
     });
-
-    e.preventDefault();
 }
 
 function registerEventListeners() {
@@ -139,15 +137,3 @@ function registerEventListeners() {
 }
 
 registerEventListeners();
-
-const joinInput = new MemberFormInput(
-    document.getElementById("join_id"),
-    document.getElementById("join_password"),
-    document.getElementById("join_nickname"),
-);
-
-const manageInput = new MemberFormInput(
-    document.getElementById("manage_id"),
-    document.getElementById("manage_password"),
-    document.getElementById("manage_nickname"),
-);

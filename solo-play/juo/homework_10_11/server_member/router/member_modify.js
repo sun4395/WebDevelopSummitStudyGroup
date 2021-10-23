@@ -27,9 +27,16 @@ router.use(function (req, res) {
     res.send({
         code: result.code,
     });
+
+    router.listeners.forEach(l => l.onModifyMember({
+        sessionId: req.session.id,
+        memberId: req.params.id,
+        result: result.code,
+    }));
 });
 
-module.exports = function(store) {
-    router.store = store;
+module.exports = function(options) {
+    router.store = options.store;
+    router.listeners = options.listeners;
     return router;
 };

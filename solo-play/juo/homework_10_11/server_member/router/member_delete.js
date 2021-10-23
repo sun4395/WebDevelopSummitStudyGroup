@@ -18,16 +18,22 @@ function resultToStatus(result) {
 const router = Express.Router({ mergeParams: true });
 
 router.use(function (req, res) {
-    const result = router.store.get(req.params.id);
+    const result = router.store.delete(req.params.id);
 
     res.status(resultToStatus(result));
     res.send({
         code: result.code,
-        member: result.data,
     });
+
+    router.listeners.forEach(l => l.onDeleteMember({
+        sessionId: req.session.id,
+        memberId: req.params.id,
+        result: result.code,
+    }));
 });
 
-module.exports = function(store) {
-    router.store = store;
+module.exports = function(options) {
+    router.store = options.store;
+    router.listeners = options.listeners;
     return router;
 };

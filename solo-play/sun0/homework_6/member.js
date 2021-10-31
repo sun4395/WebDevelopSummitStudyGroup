@@ -9,7 +9,8 @@ class Member{
 class Join{
     constructor(){
         console.log('Join - constructor');
-    }   
+    }  
+     
     static registerAccount(){
         console.log('Join - registerAccount');
         let setId = document.getElementById('id_join').value;

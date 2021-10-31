@@ -1,0 +1,14 @@
+{
+  "name": "chat_project",
+  "version": "1.0.0",
+  "description": "chat project",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "seonyoung2.lee",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^8.2.3"
+  }
+}
